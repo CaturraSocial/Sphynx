@@ -1,0 +1,1 @@
+the default port is `3000`, if you'd like to change this, make sure to rename `template.env` to `.env` and give it a new port
