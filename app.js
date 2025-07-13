@@ -2,9 +2,11 @@ const http = require('http');
 const url  = require('url');
 const proxy = require('./proxy');
 const proxyErrors = require('./proxyErrors');
+const config = require('./config.json');
 
 const CONFIG = {
-    port: process.env.PORT || 3000
+    ip: config.IP || '127.0.0.1',
+    port: config.PORT || 3000
 }
 
 const httpRequestHandler = (request, response) => {
@@ -53,7 +55,7 @@ const httpRequestHandler = (request, response) => {
     }
 }
 
-http.createServer(httpRequestHandler).listen(CONFIG.port);
-console.log(`Server running at http://127.0.0.1:${CONFIG.port}/`);
+http.createServer(httpRequestHandler).listen(CONFIG.port, CONFIG.ip);
+console.log(`Server running at http://${CONFIG.ip}:${CONFIG.port}/`);
 
 module.exports = { CONFIG }
