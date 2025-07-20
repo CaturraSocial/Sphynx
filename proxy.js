@@ -12,7 +12,7 @@ const proxyHandler = (requestUrl, response) => {
     catch(err) {
         if(Url === undefined){
             response.writeHead(200, { 'Content-Type': 'text/html' });
-            response.write('<html><body><h1>Hello, Welcome to the Sphinx Proxy server.</h1></body></html>');
+            response.write('<html><body><h1>Hello, Welcome to the Sphynx Proxy server.</h1></body></html>');
             response.end();
             return;
         }else{
