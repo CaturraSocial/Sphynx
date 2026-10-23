@@ -1,0 +1,16 @@
+services:
+  sphynx:
+    build: .
+    container_name: sphynx-proxy
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./cache:/app/cache
+    environment:
+      - PORT=3000
+      - IP=0.0.0.0
+      - CACHE_DIR=/app/cache
+      - CACHE_MAX_SIZE_MB=1024
+      - CACHE_MAX_FILE_SIZE_MB=25
+      - CACHE_TTL_HOURS=24

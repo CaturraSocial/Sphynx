@@ -1,4 +1,11 @@
 {
-    "PORT": 3000,
-    "IP": "127.0.0.1"
+  "PORT": 3000,
+  "IP": "127.0.0.1",
+  "CACHE_DIR": "./cache",
+  "CACHE_MAX_SIZE_MB": 1024,
+  "CACHE_TTL_HOURS": 24,
+  "MAX_IMAGE_SIZE_MB": 20,
+  "CACHE_MAX_FILE_SIZE_MB": 25,
+  "CONNECT_TIMEOUT_SECS": 10,
+  "READ_TIMEOUT_SECS": 30
 }
