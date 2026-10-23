@@ -38,7 +38,8 @@ pub struct Config {
 
 impl Config {
     pub fn load() -> Self {
-        let raw: RawConfig = fs::read_to_string("config.json")
+        let config_path = env::var("CONFIG_FILE").unwrap_or_else(|_| "config.json".to_string());
+        let raw: RawConfig = fs::read_to_string(&config_path)
             .ok()
             .and_then(|data| serde_json::from_str(&data).ok())
             .unwrap_or(RawConfig {

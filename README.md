@@ -61,6 +61,7 @@ Sphynx reads from `config.json` by default. Any value can be overridden with an 
 
 | Key / Env Var | Default | Description |
 |---|---|---|
+| `CONFIG_FILE` | `config.json` | Path to JSON config file |
 | `PORT` | `3000` | Port to listen on |
 | `IP` | `127.0.0.1` | IP address to bind |
 | `CACHE_DIR` | `./cache` | Directory where converted images are cached |

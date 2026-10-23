@@ -7,10 +7,8 @@ services:
       - "3000:3000"
     volumes:
       - ./cache:/app/cache
+      - ./config.json:/app/config.json:ro
     environment:
-      - PORT=3000
+      # Listen on all interfaces inside the container so Docker port mapping works.
+      # All other settings (PORT, cache sizes, TTL, timeouts) are read directly from config.json.
       - IP=0.0.0.0
-      - CACHE_DIR=/app/cache
-      - CACHE_MAX_SIZE_MB=1024
-      - CACHE_MAX_FILE_SIZE_MB=25
-      - CACHE_TTL_HOURS=24
